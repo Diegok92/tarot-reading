@@ -2,74 +2,96 @@
   {
     "name": "Aries",
     "periodText": ["March 21", "April 19"],
-    "month": [3, 4],
-    "lastDay": [21, 19],
+    "monthPeriod": [3, 4],
+    "dayPeriod": [21, 19],
     "info": "In astrology, Aries is the first sign of the zodiac, considered as governing the period from about March 21 to about April 19. Its representation as a ram is identified with the Egyptian god Amon and, in Greek mythology, with the ram with the golden fleece, on the back of which Phrixus, the son of King Athamas, safely fled Thessaly to Colchis, where he sacrificed the ram to Zeus, who placed it in the heavens as the constellation. The ram’s golden fleece was recovered by Jason, leader of the Argonauts."
   },
 
   {
     "name": "Taurus",
-    "period": ["April", "20–May 20"],
+    "period": ["April 20", "May 20"],
+    "monthPeriod": [4, 5],
+    "dayPeriod": [20, 20],
     "info": "In astrology, Taurus is the second sign of the zodiac, considered as governing that portion of the year from about April 20 to about May 20. Its representation as a bull is related to the Greek myth of Zeus, who assumed the form of a bull to abduct Europa."
   },
 
   {
     "name": "Gemini",
     "period": ["May 21", "June 21"],
+    "monthPeriod": [5, 6],
+    "dayPeriod": [21, 21],
     "info": "In astrology, Gemini is the third sign of the zodiac, considered as governing the period from about May 21 to about June 21. It is represented by a set of twins (or in Egyptian astrology by a pair of goats and in Arabian astrology by a pair of peacocks). In addition to their identification as Castor and Pollux, the twins have also been related to other celebrated pairs, such as the younger and older Horus or Romulus and Remus."
   },
 
   {
     "name": "Cancer",
     "period": ["June 22", "July 22"],
+    "monthPeriod": [6, 7],
+    "dayPeriod": [22, 22],
     "info": "In astrology, Cancer is the fourth sign of the zodiac, considered as governing the period from about June 22 to about July 22. Its representation as a crab (or lobster or crayfish) is related to the crab in Greek mythology that pinched Heracles while he was fighting the Lernaean hydra. Crushed by Heracles, the crab was rewarded by Heracles’ enemy, Hera, by being placed in the heavens."
   },
 
   {
     "name": "Leo",
     "period": ["July 23", "August 22"],
+    "monthPeriod": [7, 8],
+    "dayPeriod": [23, 22],
     "info": "In astrology, Leo is the fifth sign of the zodiac, considered as governing the period from about July 23 to about August 22. Its representation as a lion is usually linked with the Nemean lion slain by Heracles (Hercules)."
   },
 
   {
     "name": "Virgo ",
     "period": ["August 23", "September 22"],
+    "monthPeriod": [8, 9],
+    "dayPeriod": [23, 23],
     "info": "In astrology, Virgo is the sixth sign of the zodiac, considered as governing the period from about August 23 to about September 22. It is represented as a young maiden carrying a sheaf of wheat. She is variously identified as a fertility goddess (the Babylonian and Assyrian Ishtar, among others) or the harvest maiden (the Greek Persephone and others)."
   },
 
   {
     "name": "Libra",
     "period": ["September 23", "October 23"],
+    "monthPeriod": [9, 10],
+    "dayPeriod": [23, 23],
     "info": "In astrology, Libra is the seventh sign of the zodiac, considered as governing the period from about September 22 to about October 23. It is represented by a woman (sometimes identified with Astraea, the Roman goddess of justice), holding a balance scale or by the balance alone "
   },
 
   {
     "name": "Scorpius",
     "period": ["October 24", "November 21"],
+    "monthPeriod": [10, 11],
+    "dayPeriod": [24, 21],
     "info": "In astrology, Scorpius (or Scorpio) is the eighth sign of the zodiac, considered as governing the period from about October 24 to about November 21. Its representation as a scorpion is related to the Greek legend of the scorpion that stung Orion to death (said to be why Orion sets as Scorpius rises in the sky). Another Greek myth relates that a scorpion caused the horses of the Sun to bolt when they were being driven for a day by the inexperienced youth Phaeton."
   },
 
   {
     "name": "Sagittarius",
     "period": ["November 22", "December 21"],
+    "monthPeriod": [11, 12],
+    "dayPeriod": [22, 21],
     "info": "In astrology, Sagittarius is the ninth sign of the zodiac, considered as governing the period from about November 22 to about December 21. It is represented either by a centaur shooting a bow and arrow or by an arrow drawn across a bow. The identification of Sagittarius as a mounted archer was made by the Babylonians as early as the 11th century BCE."
   },
 
   {
     "name": "Capricornus",
     "period": ["December 22", "January 19"],
+    "monthPeriod": [12, 1],
+    "dayPeriod": [22, 19],
     "info": "In astrology, Capricornus (also called Capricorn) is the 10th sign of the zodiac, considered as governing the period from about December 22 to about January 19. One explanation of the fishtail with which the goat is often represented is found in the Greek myth of Pan, who, to avoid the monster Typhon, jumped into the water just as he was changing into animal shape. The half above water assumed the shape of a goat while the lower half, the tail, assumed the shape of a fish."
   },
 
   {
     "name": "Aquarius",
     "period": ["January 20", "February 18"],
+    "monthPeriod": [1, 2],
+    "dayPeriod": [20, 18],
     "info": "In astrology, Aquarius is the 11th sign of the zodiac, considered as governing the period from about January 20 to about February 18. Its representation as a man pouring a stream of water out of a jug came about, it has been suggested, because in ancient times the rising of Aquarius coincided in the Middle East with a period of floods and rain."
   },
 
   {
     "name": "Pisces",
     "period": ["February 19", "March 20"],
+    "monthPeriod": [2, 3],
+    "dayPeriod": [19, 20],
     "info": "In astrology, Pisces is the 12th sign of the zodiac, considered as governing the period from about February 19 to about March 20. Its representation as two fish tied together is usually related to the Greek myth of Aphrodite and Eros, who jumped into a river to escape the monster Typhon and changed into fish, or, alternatively, the two fish that carried them to safety."
   }
 ]
