@@ -1,5 +1,20 @@
 [
   {
+    "name": "Aquarius",
+    "period": ["January 20", "February 18"],
+    "monthPeriod": [1, 2],
+    "dayPeriod": [20, 18],
+    "info": "In astrology, Aquarius is the 11th sign of the zodiac, considered as governing the period from about January 20 to about February 18. Its representation as a man pouring a stream of water out of a jug came about, it has been suggested, because in ancient times the rising of Aquarius coincided in the Middle East with a period of floods and rain."
+  },
+
+  {
+    "name": "Pisces",
+    "period": ["February 19", "March 20"],
+    "monthPeriod": [2, 3],
+    "dayPeriod": [19, 20],
+    "info": "In astrology, Pisces is the 12th sign of the zodiac, considered as governing the period from about February 19 to about March 20. Its representation as two fish tied together is usually related to the Greek myth of Aphrodite and Eros, who jumped into a river to escape the monster Typhon and changed into fish, or, alternatively, the two fish that carried them to safety."
+  },
+  {
     "name": "Aries",
     "periodText": ["March 21", "April 19"],
     "monthPeriod": [3, 4],
@@ -78,20 +93,11 @@
     "dayPeriod": [22, 19],
     "info": "In astrology, Capricornus (also called Capricorn) is the 10th sign of the zodiac, considered as governing the period from about December 22 to about January 19. One explanation of the fishtail with which the goat is often represented is found in the Greek myth of Pan, who, to avoid the monster Typhon, jumped into the water just as he was changing into animal shape. The half above water assumed the shape of a goat while the lower half, the tail, assumed the shape of a fish."
   },
-
   {
-    "name": "Aquarius",
-    "period": ["January 20", "February 18"],
-    "monthPeriod": [1, 2],
-    "dayPeriod": [20, 18],
-    "info": "In astrology, Aquarius is the 11th sign of the zodiac, considered as governing the period from about January 20 to about February 18. Its representation as a man pouring a stream of water out of a jug came about, it has been suggested, because in ancient times the rising of Aquarius coincided in the Middle East with a period of floods and rain."
-  },
-
-  {
-    "name": "Pisces",
-    "period": ["February 19", "March 20"],
-    "monthPeriod": [2, 3],
-    "dayPeriod": [19, 20],
-    "info": "In astrology, Pisces is the 12th sign of the zodiac, considered as governing the period from about February 19 to about March 20. Its representation as two fish tied together is usually related to the Greek myth of Aphrodite and Eros, who jumped into a river to escape the monster Typhon and changed into fish, or, alternatively, the two fish that carried them to safety."
+    "name": "Test",
+    "period": ["December 22", "January 19"],
+    "monthPeriod": [12, 1],
+    "dayPeriod": [22, 19],
+    "info": "Waiting for your Birthday"
   }
 ]

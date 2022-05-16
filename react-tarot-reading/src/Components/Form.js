@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import horoscope from "../Data/horoscope.json";
 
 function Form() {
@@ -8,7 +8,14 @@ function Form() {
   const [yearBirth, setYearBirth] = useState("");
   const [monthBirth, setMonthBirth] = useState("");
   const [dayBirth, setDayBirth] = useState("");
+
   let [sign, setSign] = useState("");
+  let [signNumber, setSignNumber] = useState("12");
+
+  const [tarotCardName, setTarotCardName] = useState("");
+  const [tarotCardValue, setTarotCardValue] = useState("");
+  const [tarotCardType, setTarotCardType] = useState("");
+  const [tarotCardDesc, setTarotCardDesc] = useState("");
 
   const getName = function (e) {
     setName(e.target.value);
@@ -40,6 +47,7 @@ function Form() {
       (monthBirth == 2 && dayBirth <= 18)
     ) {
       setSign("Aquarius");
+      setSignNumber(0);
     }
     if (monthBirth == 1 && dayBirth > 31) {
       setSign("Check Dates");
@@ -49,6 +57,7 @@ function Form() {
       (monthBirth == 3 && dayBirth <= 20)
     ) {
       setSign("Pisces");
+      setSignNumber(1);
     }
     if (monthBirth == 2 && dayBirth > 29) {
       setSign("Check Dates");
@@ -58,6 +67,7 @@ function Form() {
       (monthBirth == 4 && dayBirth <= 19)
     ) {
       setSign("Aries");
+      setSignNumber(2);
     }
     if (monthBirth == 3 && dayBirth > 31) {
       setSign("Check Dates");
@@ -67,6 +77,7 @@ function Form() {
       (monthBirth == 5 && dayBirth <= 20)
     ) {
       setSign("Taurus");
+      setSignNumber(3);
     }
     if (monthBirth == 4 && dayBirth > 30) {
       setSign("Check Dates");
@@ -76,6 +87,7 @@ function Form() {
       (monthBirth == 6 && dayBirth <= 21)
     ) {
       setSign("Gemini");
+      setSignNumber(4);
     }
     if (monthBirth == 5 && dayBirth > 31) {
       setSign("Check Dates");
@@ -85,6 +97,7 @@ function Form() {
       (monthBirth == 7 && dayBirth <= 22)
     ) {
       setSign("Cancer");
+      setSignNumber(5);
     }
     if (monthBirth == 6 && dayBirth > 30) {
       setSign("Check Dates");
@@ -94,6 +107,7 @@ function Form() {
       (monthBirth == 8 && dayBirth <= 22)
     ) {
       setSign("Leo");
+      setSignNumber("6");
     }
     if (monthBirth == 7 && dayBirth > 31) {
       setSign("Check Dates");
@@ -103,6 +117,7 @@ function Form() {
       (monthBirth == 9 && dayBirth <= 22)
     ) {
       setSign("Virgo");
+      setSignNumber(7);
     }
     if (monthBirth == 8 && dayBirth > 31) {
       setSign("Check Dates");
@@ -112,6 +127,7 @@ function Form() {
       (monthBirth == 10 && dayBirth <= 22)
     ) {
       setSign("Libra");
+      setSignNumber(8);
     }
     if (monthBirth == 9 && dayBirth > 30) {
       setSign("Check Dates");
@@ -121,6 +137,7 @@ function Form() {
       (monthBirth == 11 && dayBirth <= 21)
     ) {
       setSign("Scorpio");
+      setSignNumber(9);
     }
     if (monthBirth == 10 && dayBirth > 31) {
       setSign("Check Dates");
@@ -130,6 +147,7 @@ function Form() {
       (monthBirth == 12 && dayBirth <= 21)
     ) {
       setSign("Sagittarius");
+      setSignNumber(10);
     }
     if (monthBirth == 11 && dayBirth > 30) {
       setSign("Check Dates");
@@ -139,18 +157,34 @@ function Form() {
       (monthBirth == 1 && dayBirth <= 19)
     ) {
       setSign("Capricorn");
+      setSignNumber(11);
     }
     if (monthBirth == 12 && dayBirth > 31) {
       setSign("Check Dates");
     }
+
+    // useEffect(() => {
+    //   fetch("https://rws-cards-api.herokuapp.com/api/v1/cards/random")
+    //     .then((res) => {
+    //       return res.json();
+    //     })
+    //     .then((data) => {
+    //       setTarotCard(data.cards[0]);
+    //     });
+    // }, []);
+
     const info = fetch(
       "https://rws-cards-api.herokuapp.com/api/v1/cards/random"
     )
       .then((res) => res.json())
-      .then((cards) => {
-        console.log(yearBirth);
-        console.log(cards.cards[0]);
-        console.log(horoscope[0]);
+      .then((tarot) => {
+        //console.log(yearBirth);
+        console.log(tarot.cards[0]);
+        setTarotCardName(tarot.cards[0].name);
+        setTarotCardType(tarot.cards[0].type);
+        setTarotCardDesc(tarot.cards[0].desc);
+        //console.log("signNumber vale: " + signNumber);
+        //console.log(horoscope[6].info);
       });
   };
 
@@ -224,10 +258,12 @@ function Form() {
             onChange={getDayBirth}
           />
         </div>
-
+        <h2 className="form-label">
+          Let's calculate your Zodiac Sign and see the 3 Cards!!!
+        </h2>
         <div>
           <button type="submit" className="btn btn-primary m-auto mt-4 mb-4">
-            Let the Magic Begin
+            Press for Magic
           </button>
         </div>
       </form>
@@ -237,7 +273,12 @@ function Form() {
         id="exportar"
       >
         <p className=" w-100 px-30 text-center position-absolute top-50 start-30 h1 text-center">
-          Hola: {name}, sabias q sos: {sign}
+          {sign}
+          <p>{horoscope[signNumber].info}</p>
+          <p>{tarotCardName}</p>
+          <p>{tarotCardValue}</p>
+          <p>{tarotCardType}</p>
+          <p>{tarotCardDesc}</p>
         </p>
 
         {/* <img
