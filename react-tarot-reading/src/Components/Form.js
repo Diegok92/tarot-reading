@@ -2,6 +2,25 @@ import React, { useState, useEffect } from "react";
 import horoscope from "../Data/horoscope.json";
 
 function Form() {
+  const drawCard = function () {
+    const info = fetch(
+      "https://rws-cards-api.herokuapp.com/api/v1/cards/random"
+    )
+      .then((res) => res.json())
+      .then((tarot) => {
+        //console.log(yearBirth);
+        console.log(tarot.cards[0]);
+        if (tarot.cards[0].name) {
+        }
+        setTarotImage(tarot.cards[0].name);
+        setTarotCardName(tarot.cards[0].name);
+        setTarotCardType(tarot.cards[0].type);
+        setTarotCardDesc(tarot.cards[0].desc);
+        //console.log("signNumber vale: " + signNumber);
+        //console.log(horoscope[6].info);
+      });
+  };
+
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
@@ -12,8 +31,10 @@ function Form() {
   let [sign, setSign] = useState("");
   let [signNumber, setSignNumber] = useState("12");
 
+  const [tarotImage, setTarotImage] = useState("back");
+  const [zodiacImage, setZodicaImage] = useState("Zodiac");
   const [tarotCardName, setTarotCardName] = useState("");
-  const [tarotCardValue, setTarotCardValue] = useState("");
+  // const [tarotCardValue, setTarotCardValue] = useState("");
   const [tarotCardType, setTarotCardType] = useState("");
   const [tarotCardDesc, setTarotCardDesc] = useState("");
 
@@ -48,6 +69,7 @@ function Form() {
     ) {
       setSign("Aquarius");
       setSignNumber(0);
+      setZodicaImage("Aquarius");
     }
     if (monthBirth == 1 && dayBirth > 31) {
       setSign("Check Dates");
@@ -58,6 +80,7 @@ function Form() {
     ) {
       setSign("Pisces");
       setSignNumber(1);
+      setZodicaImage("Pisces");
     }
     if (monthBirth == 2 && dayBirth > 29) {
       setSign("Check Dates");
@@ -68,6 +91,7 @@ function Form() {
     ) {
       setSign("Aries");
       setSignNumber(2);
+      setZodicaImage("Aries");
     }
     if (monthBirth == 3 && dayBirth > 31) {
       setSign("Check Dates");
@@ -78,6 +102,7 @@ function Form() {
     ) {
       setSign("Taurus");
       setSignNumber(3);
+      setZodicaImage("Taurus");
     }
     if (monthBirth == 4 && dayBirth > 30) {
       setSign("Check Dates");
@@ -88,6 +113,7 @@ function Form() {
     ) {
       setSign("Gemini");
       setSignNumber(4);
+      setZodicaImage("Gemini");
     }
     if (monthBirth == 5 && dayBirth > 31) {
       setSign("Check Dates");
@@ -98,6 +124,7 @@ function Form() {
     ) {
       setSign("Cancer");
       setSignNumber(5);
+      setZodicaImage("Cancer");
     }
     if (monthBirth == 6 && dayBirth > 30) {
       setSign("Check Dates");
@@ -108,6 +135,7 @@ function Form() {
     ) {
       setSign("Leo");
       setSignNumber("6");
+      setZodicaImage("Leo");
     }
     if (monthBirth == 7 && dayBirth > 31) {
       setSign("Check Dates");
@@ -118,6 +146,7 @@ function Form() {
     ) {
       setSign("Virgo");
       setSignNumber(7);
+      setZodicaImage("Virgo");
     }
     if (monthBirth == 8 && dayBirth > 31) {
       setSign("Check Dates");
@@ -128,6 +157,7 @@ function Form() {
     ) {
       setSign("Libra");
       setSignNumber(8);
+      setZodicaImage("Libra");
     }
     if (monthBirth == 9 && dayBirth > 30) {
       setSign("Check Dates");
@@ -136,8 +166,9 @@ function Form() {
       (monthBirth == 10 && dayBirth >= 23) ||
       (monthBirth == 11 && dayBirth <= 21)
     ) {
-      setSign("Scorpio");
+      setSign("Scorpius");
       setSignNumber(9);
+      setZodicaImage("Scorpius");
     }
     if (monthBirth == 10 && dayBirth > 31) {
       setSign("Check Dates");
@@ -148,6 +179,7 @@ function Form() {
     ) {
       setSign("Sagittarius");
       setSignNumber(10);
+      setZodicaImage("Sagittarius");
     }
     if (monthBirth == 11 && dayBirth > 30) {
       setSign("Check Dates");
@@ -156,8 +188,9 @@ function Form() {
       (monthBirth == 12 && dayBirth >= 22) ||
       (monthBirth == 1 && dayBirth <= 19)
     ) {
-      setSign("Capricorn");
+      setSign("Capricornus");
       setSignNumber(11);
+      setZodicaImage("Capricornus");
     }
     if (monthBirth == 12 && dayBirth > 31) {
       setSign("Check Dates");
@@ -173,19 +206,19 @@ function Form() {
     //     });
     // }, []);
 
-    const info = fetch(
-      "https://rws-cards-api.herokuapp.com/api/v1/cards/random"
-    )
-      .then((res) => res.json())
-      .then((tarot) => {
-        //console.log(yearBirth);
-        console.log(tarot.cards[0]);
-        setTarotCardName(tarot.cards[0].name);
-        setTarotCardType(tarot.cards[0].type);
-        setTarotCardDesc(tarot.cards[0].desc);
-        //console.log("signNumber vale: " + signNumber);
-        //console.log(horoscope[6].info);
-      });
+    // const info = fetch(
+    //   "https://rws-cards-api.herokuapp.com/api/v1/cards/random"
+    // )
+    //   .then((res) => res.json())
+    //   .then((tarot) => {
+    //     //console.log(yearBirth);
+    //     console.log(tarot.cards[0]);
+    //     setTarotCardName(tarot.cards[0].name);
+    //     setTarotCardType(tarot.cards[0].type);
+    //     setTarotCardDesc(tarot.cards[0].desc);
+    //     //console.log("signNumber vale: " + signNumber);
+    //     //console.log(horoscope[6].info);
+    //   });
   };
 
   return (
@@ -259,34 +292,67 @@ function Form() {
           />
         </div>
         <h2 className="form-label">
-          Let's calculate your Zodiac Sign and see the 3 Cards!!!
+          Let's calculate your Zodiac Sign and see your Tarot Cards!!!
         </h2>
         <div>
           <button type="submit" className="btn btn-primary m-auto mt-4 mb-4">
-            Press for Magic
+            Zodiac Sign
+          </button>
+        </div>
+        <figure
+          className="figure w-25 m-auto d-block position-relative centrado text-center figure2"
+          id="exportar"
+        >
+          <p className=" w-100 px-20 text-center  h1 text-center">{sign}</p>
+          {
+            <img
+              src={`/images/signs/${zodiacImage}.png`}
+              className="figure-img img-fluid mt-3 m-0 p-0 "
+              alt="..."
+            />
+          }
+          <p>{horoscope[signNumber].info}</p>
+        </figure>
+        <div>
+          <button
+            onClick={drawCard}
+            className="btn btn-primary m-auto mt-4 mb-4"
+          >
+            Card for the Past
+          </button>
+          <button
+            onClick={drawCard}
+            className="btn btn-primary m-auto mt-4 mb-4"
+          >
+            Card for the Present
+          </button>
+          <button
+            onClick={drawCard}
+            className="btn btn-primary m-auto mt-4 mb-4"
+          >
+            Card for the Future
           </button>
         </div>
       </form>
 
       <figure
-        className="figure w-50 m-auto d-block position-relative centrado text-center figure2"
+        className="figure w-25 m-auto d-block position-relative centrado text-center figure2"
         id="exportar"
       >
-        <p className=" w-100 px-30 text-center position-absolute top-50 start-30 h1 text-center">
-          {sign}
-          <p>{horoscope[signNumber].info}</p>
+        <p className=" w-100 px-30 text-center  h1 text-center">
           <p>{tarotCardName}</p>
-          <p>{tarotCardValue}</p>
-          <p>{tarotCardType}</p>
-          <p>{tarotCardDesc}</p>
         </p>
+        <p>{tarotCardType}</p>
+        {
+          <img
+            src={`/images/tarot/${tarotImage}.png`}
+            className="figure-img img-fluid mt-3 m-0 p-0 "
+            alt="..."
+          />
+        }
+        <p className=" w-100 px-30 text-center  h1 text-center"></p>
 
-        {/* <img
-          src={`/img/${imagen}.png`}
-          className="figure-img img-fluid mt-3 m-0 p-0 "
-          alt="..."
-        /> */}
-        {/* <p className=" w-100 border border-secondary text-white bg-dark pt-1 mt-0 pb-2 h5 text-center position-absolute end-80 start-30">{firma}</p>*/}
+        <p>{tarotCardDesc}</p>
       </figure>
     </div>
   );
