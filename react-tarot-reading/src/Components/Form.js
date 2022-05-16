@@ -20,6 +20,19 @@ function Form() {
         //console.log(horoscope[6].info);
       });
   };
+  const horoscopeToday = function () {
+    let signo = sign.toLowerCase();
+    console.log(signo);
+
+    const info = fetch(`https://ohmanda.com/api/horoscope/${signo}`)
+      .then((res) => res.json())
+      .then((horoscope) => {
+        setHoroscopeApi(horoscope.horoscope);
+        console.log(horoscope);
+        //console.log("signNumber vale: " + signNumber);
+        //console.log(horoscope[6].info);
+      });
+  };
 
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -30,6 +43,7 @@ function Form() {
 
   let [sign, setSign] = useState("");
   let [signNumber, setSignNumber] = useState("12");
+  let [horoscopeApi, setHoroscopeApi] = useState("");
 
   const [tarotImage, setTarotImage] = useState("back");
   const [zodiacImage, setZodicaImage] = useState("Zodiac");
@@ -188,7 +202,7 @@ function Form() {
       (monthBirth == 12 && dayBirth >= 22) ||
       (monthBirth == 1 && dayBirth <= 19)
     ) {
-      setSign("Capricornus");
+      setSign("Capricorn");
       setSignNumber(11);
       setZodicaImage("Capricornus");
     }
@@ -222,7 +236,7 @@ function Form() {
   };
 
   return (
-    <div className="container">
+    <div className="container w-50">
       <h1>Welcome to the Tarot Reading Page</h1>
       <form className="row g-3" onSubmit={sendForm}>
         <div className="col-md-6">
@@ -296,11 +310,11 @@ function Form() {
         </h2>
         <div>
           <button type="submit" className="btn btn-primary m-auto mt-4 mb-4">
-            Zodiac Sign
+            Calculate Zodiac Sign
           </button>
         </div>
         <figure
-          className="figure w-25 m-auto d-block position-relative centrado text-center figure2"
+          className="figure w-50 m-auto d-block position-relative centrado text-center figure2"
           id="exportar"
         >
           <p className=" w-100 px-20 text-center  h1 text-center">{sign}</p>
@@ -308,11 +322,40 @@ function Form() {
             <img
               src={`/images/signs/${zodiacImage}.png`}
               className="figure-img img-fluid mt-3 m-0 p-0 "
-              alt="..."
+              alt="photo"
             />
           }
+
           <p>{horoscope[signNumber].info}</p>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>Prediction:</span>{" "}
+            {horoscope[signNumber].prediction}
+          </p>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>Monetary Gains:</span>{" "}
+            {horoscope[signNumber].money}
+          </p>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>Love Life:</span>{" "}
+            {horoscope[signNumber].love}
+          </p>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>Health:</span>{" "}
+            {horoscope[signNumber].health}
+          </p>
         </figure>
+        <button
+          onClick={horoscopeToday}
+          className="btn btn-primary m-auto mt-4 mb-4"
+        >
+          See Your Horoscope of the Day
+        </button>
+        <p>{horoscopeApi}</p>
+
         <div>
           <button
             onClick={drawCard}
