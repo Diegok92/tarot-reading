@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import horoscope from "../Data/horoscope.json";
+import "./form.css";
 
 function Form() {
   const drawCard = function () {
